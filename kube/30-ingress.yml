@@ -8,7 +8,6 @@ spec:
   - host: demoniacdeath.me
     http:
       paths:
-      - path: /*
-        backend:
+      - backend:
           serviceName: static-website
           servicePort: 80

@@ -1,20 +1,12 @@
 ---
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
-  annotations: {}
-  labels:
-    app: static-website
   name: static-website
-  namespace: default
 spec:
-  ports:
-  - name: http
-    port: 80
-    protocol: TCP
-    targetPort: 80
   selector:
     app: static-website
-  sessionAffinity: ClientIP
-  type: ClusterIP
-
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
