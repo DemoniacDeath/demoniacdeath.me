@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Maze Runner v0.0.2</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91741706-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="container" id="container"></div>
+	<div class="button_container">
+		<button id="rerun">Restart</button>
+		<button id="solve">Solve</button>
+	</div>
+	<script src="js/core.js"></script>
+	<script src="js/cell.js"></script>
+	<script src="js/cellMatrix.js"></script>
+	<script src="js/mazeGenerator.js"></script>
+	<script src="js/player.js"></script>
+	<script src="js/autoSolver.js"></script>
+	<script src="js/game.js"></script>
+	<script>
+		/**
+		 * v0.0.1 - This is a basic version of the game. It's not even polished. Just a raw mazerunner. Still, all the main classes and algorithms are done. MVP is ready.
+		 *
+		 * v0.0.2 - in progress
+		 *
+		 * TODO:
+		 * - restructure game to allow multiple players (refactor Solver into Player mb?)
+		 * - add a bot solver (enemy) with a randomly delayed reaction time
+		 * - improve rendering process
+		 * - add moves counter + timer
+		 * - difficulty level selection
+		 * - add game mode selection
+		 * - add online scoreboard + authorization (VK, FB)
+		 */
+		document.addEventListener("DOMContentLoaded", function() {
+			var canvas = document.createElement("canvas");
+			canvas.width = 800;
+			canvas.height = 800;
+			document.getElementById('container').appendChild(canvas);
+		    var game = new Game(canvas, 40, 40);
+		    game.run();
+		    document.getElementById('rerun').addEventListener('click', function(){
+		    	game.rerun();
+		    });
+		    document.getElementById('solve').addEventListener('click', function(){
+		    	game.startAutoSolve();
+		    });
+		});
+	</script>
+
+</body></html>

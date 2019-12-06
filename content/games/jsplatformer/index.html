@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JSPlatformer v0.0.3</title>
+    <style>
+        * { margin: 0; padding: 0;}
+
+        body, html { height:100%; }
+
+        canvas {
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+
+        #game {z-index: 1;}
+        #ui {z-index: 2;}
+    </style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91741706-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+<body>
+    <canvas id="game"></canvas>
+    <canvas id="ui"></canvas>
+    <script data-main="js/main.js" type="text/javascript" src="js/require.min.js"></script>
+</body>
+</html>
