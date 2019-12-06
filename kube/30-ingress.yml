@@ -1,0 +1,14 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: static-website
+spec:
+  rules:
+  - host: demoniacdeath.me
+    http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: static-website
+          servicePort: 80
